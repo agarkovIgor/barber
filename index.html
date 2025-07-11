@@ -64,7 +64,7 @@
       <div class="services__catalog">
         <div class="services__catalog-items">
           <h2>Современные модели прически</h2>
-          <a class="button services-catalog__buttom" href="#">каталог</a>
+          <a class="button services-catalog__buttom" href="https://lafoy.ru/vidy-muzhskih-strizhek-nazvaniya-i-foto-1741?ysclid=mcxrigr6ny242931850" target="_blank">каталог</a>
         </div>
       </div>
     </section>
@@ -73,7 +73,7 @@
       <div class="services2__catalog2">
         <div class="services2__catalog2-items">
           <h2>Современные модели бороды</h2>
-          <a class="button services2-catalog2__buttom" href="#">каталог</a>
+          <a class="button services2-catalog2__buttom" href="https://bbarber.ru/stati/45-stilnykh-i-sovremennykh-muzhskikh-prichesok-s-borodoy/?ysclid=mcxrs6kqgg696304433" target="_blank">каталог</a>
         </div>
       </div>
       <div class="services2__description">
@@ -138,7 +138,7 @@
         </div>
         <div class="contacts-items__mail">
           <a href="mailto:barber777.@gmail.ru">
-            <img src="img/mail-1.svg" alt="mail">
+            <img src="img/mail-1.svg" loading="lazy" alt="mail">
             barber777.@gmail.ru
           </a>
         </div>
@@ -158,6 +158,30 @@
 
 
   <script>
+    //появление advantages__item при сколле
+    function onEntry(entry) {
+      entry.forEach(change => {
+        if (change.isIntersecting) {
+          change.target.classList.add('element-show');
+        } else {
+          change.target.classList.remove('element-show');
+        }
+      });
+    }
+
+    let options = {
+      threshold: [0.5] 
+    };
+
+    let observer = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.advantages__item');
+    
+    for(let elem of elements) {
+      observer.observe(elem);
+    }
+    
+
+    //меню бургер
     const menuBtn = document.querySelector('.header-nav__btn');
     const menu = document.querySelector('.header-nav__list');
     menuBtn.addEventListener('click', function() {
