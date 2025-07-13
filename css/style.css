@@ -292,11 +292,14 @@ ul {
   height: auto;
   position: absolute;
   opacity: 0;
+  filter: blur(3px);
 }
 
 .advantages__item.element-show {
   opacity: 1;
-  transition: opacity 3s;
+  filter: blur(0);
+  transition: opacity 2s, filter 2s;
+  
 }
 
 .advantages__items #item-1 {
